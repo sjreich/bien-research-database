@@ -5,7 +5,8 @@ default: &default
 
 development:
   <<: *default
-  database: bien-research-database_development
+  database: bien_research_database_development
+  host: localhost
 
 test:
   <<: *default
