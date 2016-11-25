@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: bien-research-database_development
+
+test:
+  <<: *default
+  database: bien-research-database_test
+
+production:
+  <<: *default
+  database: bien-research-database_production
+  username: bien-research-database
+  password: <%= ENV['BIEN-RESEARCH-DATABASE_DATABASE_PASSWORD'] %>
