@@ -1,0 +1,45 @@
+<div class='panel panel-default'>
+  <div class='panel-heading'>
+    <h3 class='panel-title'><%= work.title %></h3>
+  </div>
+  <div class='panel-body'>
+    <dl class="dl-horizontal">
+
+      <% if work.authors.present? %>
+        <dt><%= 'Author'.pluralize(work.authors.count) %></dt>
+        <dd><%= work.author_string %></dd>
+      <% end %>
+
+      <% if work.publication_date %>
+        <dt>Publication Date</dt>
+        <dd><%= work.publication_date.to_formatted_s(:long) %></dd>
+      <% end %>
+
+      <% if work.language %>
+        <dt>Language</dt>
+        <dd><%= work.language %></dd>
+      <% end %>
+
+      <% if work.type_of_work %>
+        <dt>Type of Work</dt>
+        <dd><%= work.type_of_work %></dd>
+      <% end %>
+
+      <% if work.journal %>
+        <dt>Journal</dt>
+        <dd><%= work.journal %></dd>
+      <% end %>
+
+      <% if work.link %>
+        <dt>Link</dt>
+        <dd><a><%= work.link %></a></dd>
+      <% end %>
+
+      <% if work.bibliographic_entry %>
+        <dt>Bibliograhic Entry</dt>
+        <dd><pre style="white-space: normal"><%= work.bibliographic_entry %></pre></dd>
+      <% end %>
+
+    </dl>
+  </div>
+</div>
