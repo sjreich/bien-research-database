@@ -9,9 +9,13 @@ gem 'turbolinks'
 
 # gem 'bcrypt', '~> 3.1.7'
 
+group :test do
+  gem 'rspec-rails'
+end
+
 group :development, :test do
   gem 'byebug'
-  gem 'rspec-rails'
+  gem 'pry-rails'
 end
 
 group :development do
