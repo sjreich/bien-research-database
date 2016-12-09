@@ -30,13 +30,18 @@
         <dd><%= work.journal %></dd>
       <% end %>
 
+      <% if work.keywords %>
+        <dt>Keywords</dt>
+        <dd><%= work.keywords %></dd>
+      <% end %>
+
       <% if work.link %>
         <dt>Link</dt>
         <dd><a><%= work.link %></a></dd>
       <% end %>
 
       <% if work.bibliographic_entry %>
-        <dt>Bibliograhic Entry</dt>
+        <dt>Bibliographic Entry</dt>
         <dd><pre style="white-space: normal"><%= work.bibliographic_entry %></pre></dd>
       <% end %>
 
