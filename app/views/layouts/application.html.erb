@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BienResearchDatabase</title>
+  <title>BIEN Research Database</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div class='container'>
+    <%= render 'layouts/title_bar' %>
+    <%= render 'layouts/search_bar' %>
     <%= yield %>
   </div>
 </body>
