@@ -1,0 +1,15 @@
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/LiteralComment:
+  Enabled: false
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'db/**/*'

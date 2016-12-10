@@ -15,6 +15,7 @@ class CsvImporter
 
     private
 
+    # rubocop:disable Metrics/MethodLength
     def params(data)
       {
         title: data['Title'],
@@ -28,6 +29,7 @@ class CsvImporter
         authors: authors(data),
       }
     end
+    # rubocop:enable Metrics/MethodLength
 
     def publication_date(date_string)
       return unless date_string.present?
@@ -35,16 +37,16 @@ class CsvImporter
     end
 
     def authors(data)
-      author_params = data.map { |key, value|
-        next unless /author \d (first|last)/i === key
-        next [:first_name, value] if /first/i === key
-        [:last_name, value] if /last/i === key
-      }.compact
+      author_params = data.map do |key, value|
+        next unless /author \d (first|last)/i =~ key
+        next [:first_name, value] if /first/i =~ key
+        [:last_name, value] if /last/i =~ key
+      end.compact
 
-      author_params.each_slice(2).map { |author_data|
+      author_params.each_slice(2).map do |author_data|
         next unless author_data.to_h.values.any?
         Author.find_or_create_by(author_data.to_h)
-      }.compact
+      end.compact
     end
   end
 end
