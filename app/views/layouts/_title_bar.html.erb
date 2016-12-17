@@ -1,6 +1,14 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <h4 class='navbar-text'>Basic Income Research Database</h4>
-    <a class="navbar-brand navbar-right" href="http://basicincome.org/">BIEN Home Page</a>
+    <% height = '60' %>
+
+    <h3 class='navbar-text', style="line-height: <%= height %>px">
+      Basic Income Research Database
+    </h3>
+
+    <%= link_to "http://basicincome.org/",
+                class: 'navbar-right navbar-brand' do %>
+      <%= image_tag("BIEN_logo.png", height: height) %>
+    <% end %>
   </div>
 </nav>
