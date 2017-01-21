@@ -4,7 +4,7 @@ class Work < ActiveRecord::Base
   has_many :authorings, dependent: :destroy
   has_many :authors, through: :authorings
 
-  pg_search_scope :search,
+  pg_search_scope :full_search,
                   against: [
                     :title,
                     :journal,
@@ -22,6 +22,11 @@ class Work < ActiveRecord::Base
                       dictionary: 'english',
                     }
                   }
+
+  def self.search(query)
+    return all if query.empty?
+    full_search(query)
+  end
 
   def author_string
     authors.map(&:to_s).join(', ')
