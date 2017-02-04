@@ -1,0 +1,37 @@
+<%= label_tag :title %>
+<%= text_field_tag :title,
+                   params[:title],
+                   class: 'form-control' %>
+
+<%= label_tag :author %>
+<%= select_tag :author,
+               options_for_select(@authors, params[:author]),
+               include_blank: true,
+               class: 'form-control' %>
+
+<%= label_tag :keywords %>
+<%= text_field_tag :keywords,
+                   params[:keywords],
+                   class: 'form-control' %>
+
+<%= label_tag :published_after %>
+<%= date_field_tag :published_after,
+                   params[:published_after],
+                   class: 'form-control' %>
+
+<%= label_tag :published_before %>
+<%= date_field_tag :published_before,
+                   params[:published_before],
+                   class: 'form-control' %>
+
+<%= label_tag :language %>
+<%= select_tag :language,
+               options_for_select(@languages, params[:language]),
+               include_blank: true,
+               class: 'form-control' %>
+
+<%= label_tag :type_of_work %>
+<%= select_tag :type_of_work,
+               options_for_select(@types, params[:type_of_work]),
+               include_blank: true,
+               class: 'form-control' %>
