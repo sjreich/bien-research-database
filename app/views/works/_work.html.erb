@@ -37,7 +37,7 @@
 
       <% if work.link %>
         <dt>Link</dt>
-        <dd><a><%= work.link %></a></dd>
+        <dd><a href="<%= work.link %>"><%= truncate(work.link, separator: '/') %></a></dd>
       <% end %>
 
       <% if work.bibliographic_entry %>
