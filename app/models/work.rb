@@ -41,6 +41,6 @@ class Work < ActiveRecord::Base
   end
 
   def author_string
-    authors.map(&:to_s).join(', ')
+    authors.map(&:to_s).to_sentence
   end
 end
